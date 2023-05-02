@@ -1,0 +1,13 @@
+# async-only: true
+extension: ['ts']
+jobs: 1
+package: './package.json'
+parallel: false
+recursive: false
+reporter: 'spec'
+retries: 1
+slow: '75'
+spec:
+  - 'tests/**/*.spec.ts'
+timeout: '2000'
+ui: 'bdd'

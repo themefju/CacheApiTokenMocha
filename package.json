@@ -1,0 +1,18 @@
+{
+  "name": "cacheapitokenmocha",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha -r ts-node/register"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.16.3",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
