@@ -3,3 +3,8 @@ export interface TokenObject {
   expires_in: number;
   access_token: string;
 }
+
+export interface AnimalsResponse {
+  animals: Array<object>;
+  pagination: object;
+}
