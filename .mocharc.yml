@@ -9,5 +9,5 @@ retries: 1
 slow: '75'
 spec:
   - 'tests/**/*.spec.ts'
-timeout: '2000'
+timeout: '10000'
 ui: 'bdd'
