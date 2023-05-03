@@ -1,13 +1,13 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-import { getAccessToken } from './getAccessToken';
+import { cacheAccessToken } from './cacheToken';
 
 const BASE_URL = process.env.BASE_URL as string;
 
 export async function sendGetRequest(path: string): Promise<object> {
   const fullPath = BASE_URL.concat(path);
-  const { access_token } = await getAccessToken();
+  const access_token = await cacheAccessToken();
   const response: object = await fetch(new URL(fullPath), {
     method: 'GET',
     headers: {
