@@ -27,6 +27,8 @@ export async function getAccessToken(): Promise<TokenObject> {
         return response.json();
       }
 
+      // dont throw json to catch block and
+      // dont throw new Error if wanna test e.g. 400 status response
       return response.json().then(function (json: object) {
         throw json;
       });
