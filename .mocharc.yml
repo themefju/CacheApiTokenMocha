@@ -6,7 +6,7 @@ parallel: false
 recursive: false
 reporter: 'spec'
 retries: 1
-slow: '75'
+slow: '500'
 spec:
   - 'tests/**/*.spec.ts'
 timeout: '10000'
