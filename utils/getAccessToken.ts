@@ -1,11 +1,12 @@
 import * as dotenv from 'dotenv';
+import { TokenObject } from './types';
 dotenv.config();
 
 const BASE_URL = process.env.BASE_URL as string;
 const TOKEN_PATH = process.env.TOKEN_ENDPOINT as string;
 const TOKEN_URL = BASE_URL.concat(TOKEN_PATH);
 
-const GRANT_TYPE = 'client_credentials';
+const GRANT_TYPE = process.env.GRANT_TYPE as string;
 const CLIENT_ID = process.env.CLIENT_ID as string;
 const CLIENT_SECRET = process.env.CLIENT_SECRET as string;
 
@@ -15,8 +16,8 @@ const params = new URLSearchParams({
   client_secret: CLIENT_SECRET,
 });
 
-export async function getAccessToken() {
-  const response = await fetch(new URL(TOKEN_URL), {
+export async function getAccessToken(): Promise<TokenObject> {
+  const response: TokenObject = await fetch(new URL(TOKEN_URL), {
     method: 'POST',
     body: params,
   })
