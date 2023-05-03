@@ -1,23 +1,23 @@
 import { expect } from 'chai';
 import { cacheAccessToken } from '../utils/cacheToken';
 
-let token = '';
+let cachedToken = '';
 
 before(async function () {
-  token = await cacheAccessToken();
+  cachedToken = await cacheAccessToken();
 });
 
 it('caches token #1', async function () {
-  const cachedToken = await cacheAccessToken();
-  expect(cachedToken).to.equal(token);
+  const token = await cacheAccessToken();
+  expect(token).to.equal(cachedToken);
 });
 
 it('caches token #2', async function () {
-  const cachedToken = await cacheAccessToken();
-  expect(cachedToken).to.equal(token);
+  const token = await cacheAccessToken();
+  expect(token).to.equal(cachedToken);
 });
 
 it('caches token #3', async function () {
-  const cachedToken = await cacheAccessToken();
-  expect(cachedToken).to.equal(token);
+  const token = await cacheAccessToken();
+  expect(token).to.equal(cachedToken);
 });
