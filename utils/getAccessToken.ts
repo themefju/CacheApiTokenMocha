@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
-import { TokenObject } from './types';
 dotenv.config();
+
+import { TokenObject } from './types';
 
 const BASE_URL = process.env.BASE_URL as string;
 const TOKEN_PATH = process.env.TOKEN_ENDPOINT as string;
@@ -26,11 +27,11 @@ export async function getAccessToken(): Promise<TokenObject> {
         return response.json();
       }
 
-      return response.json().then(function (json) {
+      return response.json().then(function (json: object) {
         throw json;
       });
     })
-    .catch(function (error) {
+    .catch(function (error: object) {
       throw new Error(JSON.stringify(error));
     });
 
